@@ -3,10 +3,14 @@ var sortDesc = arr => {
         // 내림차순
         (a, b) => b - a
     );
+    return arr
 };
 
 var arr = [1,2,3,4,5,6,7,8,9];
-sortDesc(arr);
+console.log(sortDesc(arr));
+console.log(arr);
+
+
 
 // 부수효과와 무관해 보이지만, Array.sort는 원본 레퍼런스가 가리키는 배열의 원소를 정렬함.
 
