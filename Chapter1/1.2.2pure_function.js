@@ -1,4 +1,7 @@
-//** curry()는 npm 설치 필요
+// curry
+function curry(f) {
+  return (a, ..._) => _.length < 1 ? (..._) => f(a, ..._) : f(a, ..._);
+}
 
 // 외부 자원을 상대로 읽고 쓰는 함수는 부수효과를 동반함.
 var counter = 0;
@@ -46,10 +49,10 @@ console.log(add(5, 6) === 11)
 console.log(curriedAdd(5)(6) === 11);
 
 // test2
-function volume(l, w, h) {
-  return l * w * h;
+function volume(l, w) {
+  return l * w;
 }
 
 var curried = curry(volume);
 
-console.log(curried(1)(2)(3)); // 6
+console.log(curried(1)(2)); // 6
